@@ -521,7 +521,7 @@ HTML = f"""<!doctype html>
 <body>
 
 <header class="mast"><div class="wrap">
-  <div class="eyebrow">ResoMap · 產品路線圖 · 內部文件</div>
+  <div class="eyebrow">ResoMap · 產品路線圖 · T0–T5</div>
   <h1>從一支不需要伺服器的 Demo，<br>到每一塊錢都對得回一次點擊</h1>
   <p class="lede">
     這份路線圖不是把功能分成六桶。它是把 {len(FEATURES)} 個功能的依賴圖拓撲排序之後，
@@ -597,7 +597,7 @@ HTML = f"""<!doctype html>
 </div></section>
 
 <footer><div class="wrap">
-  ResoMap 產品路線圖 · 依賴排序版 · 內部文件，未經授權請勿外流<br>
+  ResoMap 產品路線圖 · 依賴排序版<br>
   T0 內容由程式碼盤點讀出，非自述；依賴圖經三輪對抗式檢查，階段順序 0 違規。
 </div></footer>
 
