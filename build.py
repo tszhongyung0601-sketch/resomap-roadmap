@@ -607,6 +607,14 @@ HTML = f"""<!doctype html>
 
 io.open(f"{ROOT}/index.html", "w", encoding="utf-8", newline="\n").write(HTML)
 
+# Artifact publishing supplies its own <!doctype>/<html>/<head>/<body>, so that
+# variant carries only the title, the stylesheet and the page content. Sliced out
+# of the same string rather than maintained separately — two copies of an 88KB
+# page is two copies that drift.
+_body = HTML.split("<body>", 1)[1].rsplit("</body>", 1)[0]
+ARTIFACT = f"<title>ResoMap 路線圖 T0–T5</title>\n<style>{CSS}</style>\n{_body}"
+io.open(f"{ROOT}/artifact.html", "w", encoding="utf-8", newline="\n").write(ARTIFACT)
+
 # ---------------------------------------------------------------------- CSV
 
 with io.open(f"{ROOT}/features.csv", "w", encoding="utf-8-sig", newline="") as fh:
